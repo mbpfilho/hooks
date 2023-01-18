@@ -12,7 +12,12 @@ const UseState = (props) => {
             />
             <SectionTitle title="Exercício #1"></SectionTitle>
             <div className="center">
-                
+                <span className="text">{count}</span>
+                <div>
+                    <button className="btn" onClick={_=>setCount(count-1)}>-1</button>
+                    <button className="btn" onClick={_=>setCount(count+1)}>+1</button>
+                    <button className="btn" onClick={_=>setCount(current=>current+1000)}>+1000</button>
+                </div>
             </div>
             <SectionTitle title="Exercício #2"></SectionTitle>
         </div>
