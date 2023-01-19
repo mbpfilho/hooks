@@ -9,11 +9,20 @@ function calcFatorial(n){
 }
 
 const UseEffect = (props) => {
+
+    //Ex #1
     const [getNumber,setNumber]=useState(1)
     const [getFatorial,setFatorial]=useState(1)
 
     useEffect(function(){
         setFatorial(calcFatorial(getNumber))
+    },[getNumber])
+
+    //Ex #2
+    const [status,setStatus]=useState("Ímpar")
+
+    useEffect(function(){
+        setStatus(getNumber%2===0?"Par":"Ímpar")
     },[getNumber])
 
     return (
@@ -32,7 +41,10 @@ const UseEffect = (props) => {
             </div>
             <SectionTitle title="Exercício #2"></SectionTitle>
             <div className="center">
-                
+                <div>
+                    <span className="text">Status: </span>
+                    <span className="text red">{status}</span>
+                </div>
             </div>
         </div>
     )
