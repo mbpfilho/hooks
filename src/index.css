@@ -15,8 +15,9 @@ body {
 
 .input {
     font-weight: 300;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 20px 0px;
+    width: 250px;
 }
 
 .btn {
@@ -27,7 +28,7 @@ body {
     outline: none;
     background-color: #0092c3;
 
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fff;
 }
 

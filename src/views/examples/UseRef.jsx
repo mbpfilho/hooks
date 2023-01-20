@@ -4,12 +4,13 @@ import SectionTitle from '../../components/layout/SectionTitle'
 import { useEffect } from 'react'
 
 const merge=function(s1,s2){
-    const a1=[...s1]
-    const a2=[...s2]
-    let resp=[]
+    // const a1=[...s1]
+    // const a2=[...s2]
+    // let resp=[]
 
-    a1.forEach(l=>resp.push(l,a2[a1.indexOf(l)]))
-    return resp
+    // a1.forEach(l=>resp.push(l,a2[a1.indexOf(l)]||""))
+    // return resp.join("")
+    return [...s1].map((e,i)=>`${e}${s2[i]||""}`).join("")
 }
 
 const UseRef = (props) => {
