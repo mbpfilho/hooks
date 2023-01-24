@@ -12,6 +12,16 @@ function reducer(state,action){
     switch(action.type){
         case "numberAdd2":
             return{...state,number:state.number+2}
+        // case "numberAddN":
+        //     return{...state,number:state.number+parseInt(document.getElementById("n").value)}
+        case "numberAddN":
+            return{...state,number:state.number+parseInt(action.payload)}
+        case "numberMult7":
+            return{...state,number:state.number*7}
+        case "numberDiv25":
+            return{...state,number:state.number/25}
+        case "numberParseInt":
+            return{...state,number:parseInt(state.number)}
         case "login":
             return {...state,user:{name:action.payload}}
         default:
@@ -39,6 +49,13 @@ const UseReducer = (props) => {
                 <div>
                     <button className="btn" onClick={_=>dispatch({type:"login",payload:"Maria"})}>Login</button>
                     <button className="btn" onClick={_=>dispatch({type:"numberAdd2"})}>+2</button>
+                    <button className="btn" onClick={_=>dispatch({type:"numberMult7"})}>*7</button>
+                    <button className="btn" onClick={_=>dispatch({type:"numberDiv25"})}>/25</button>
+                    <button className="btn" onClick={_=>dispatch({type:"numberParseInt"})}>Int</button>
+                    <div>
+                        <input type="number" id="n" className="input" onChange={e=>e.target.value} />
+                        <button className="btn" onClick={_=>dispatch({type:"numberAddN",payload:document.getElementById("n").value})}>Add</button>
+                    </div>
                 </div>
             </div>
         </div>
